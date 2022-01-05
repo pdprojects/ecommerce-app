@@ -1,5 +1,5 @@
 import React from 'react';
-import  { Route, Routes } from 'react-router-dom';
+import  { Route, Routes, Switch } from 'react-router-dom';
 
 import HomePage from './page/homepage/homepage.component';
 
@@ -9,13 +9,13 @@ const HatsPage = () => (
   <div><h1>HATS</h1></div>
 )
 
-function App() {
+function App(props) {
   return (
     <div>
-      <Routes>
-        <Route path='/' element={<HomePage />}/>
-        <Route path='/hats' element={<HatsPage/>}/>
-      </Routes>
+      <Switch>
+        <Route exact path='/' component={HomePage}/>
+        <Route path='/hats' component={HatsPage}/>
+        </Switch>
     </div>
   );
 }
